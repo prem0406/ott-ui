@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../app.constants';
 import { map, Observable, of } from 'rxjs';
 import { Movie } from '../models/movie.interface';
+import { Router } from '@angular/router';
 
 const EMAIL:string = 'email';
 const AUTHENTICATED_USER: string= 'AUTHENTICATED_USER';
@@ -33,7 +34,7 @@ const user = [
 })
 export class HttpService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   //Auth related service starts here
   // authenticate(username: string, password: string){
@@ -121,6 +122,29 @@ export class HttpService {
 
   postFav(data: Movie){
     return this.http.post(`${API_URL}/fav`, data);
+  }
+
+  isPrime(){
+    if(!this.isAuth()){
+      return false;
+    }
+    return localStorage.getItem(`PRIME${this.getName()}`) !== null;
+  }
+  
+  joinPrime(){
+
+    if(!this.isAuth){
+      this.router.navigate(['login']);
+     
+    } else{
+
+      localStorage.setItem(`PRIME${this.getName()}`, "true");
+    }
+
+  }
+
+  showAdd(){
+    return this.getRole() === "ADMIN"
   }
 
 }

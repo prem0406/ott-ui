@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false" *ngIf="isAuth" >
+      [opened]="(isHandset$ | async) === false" *ngIf="authService.isAuth()" >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/">Home</a>
@@ -26,18 +26,18 @@
       <span><a routerLink="">Binge-Watch</a></span>
       <!-- <span></span> -->
       <div class="btn-add">
-        <button *ngIf="showAdd()"  mat-button (click)="gotoAddMovie()">Add Movie</button>
+        <button *ngIf="authService.showAdd()"  mat-button (click)="gotoAddMovie()">Add Movie</button>
       </div>
       <div class="btn-prime">
-        <button *ngIf="isPrime()"  mat-button>Prime</button>
+        <button *ngIf="authService.isPrime()"  mat-button>Prime</button>
       </div>
       <div class="btn-prime">
-        <button *ngIf="!isPrime()" (click)="joinPrime()"  mat-button>Join Prime</button>
+        <button *ngIf="!authService.isPrime()" (click)="authService.joinPrime()"  mat-button>Join Prime</button>
       </div>
       <div class="btn-login">
-      <button  *ngIf="!isAuth" mat-button (click)="logoutUser()">Login</button>
-      <button  *ngIf="isAuth" mat-button>Welcome! {{userName}}</button>
-      <button  *ngIf="isAuth" mat-button (click)="logoutUser()">Logout</button>
+      <button  *ngIf="!authService.isAuth()" mat-button (click)="logoutUser()">Login</button>
+      <button  *ngIf="authService.isAuth()" mat-button>Welcome! {{userName}}</button>
+      <button  *ngIf="authService.isAuth()" mat-button (click)="logoutUser()">Logout</button>
     </div>
     </mat-toolbar>
     <!-- Add Content Here -->

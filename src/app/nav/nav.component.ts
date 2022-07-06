@@ -21,7 +21,7 @@ export class NavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private authService: HttpService, private router: Router) {}
+  constructor(private breakpointObserver: BreakpointObserver, public authService: HttpService, private router: Router) {}
 
   ngOnInit(): void {
     this.isAuth = this.authService.isAuth();
@@ -35,31 +35,12 @@ export class NavComponent {
    
   }
 
-  showAdd(){
-    return this.role === "ADMIN"
-  }
+
 
   gotoAddMovie() {
     this.router.navigate(['add']);
   }
 
-  isPrime(){
-    if(!this.isAuth){
-      return false;
-    }
-    return localStorage.getItem(`PRIME${this.userName}`) !== null;
-  }
-  
-  joinPrime(){
 
-    if(!this.isAuth){
-      this.router.navigate(['login']);
-     
-    } else{
-
-      localStorage.setItem(`PRIME${this.userName}`, "true");
-    }
-
-  }
 
 }
