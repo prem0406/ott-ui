@@ -1,0 +1,45 @@
+.container {
+    background-color: red;
+    min-height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.container .start {
+    width: 60%;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.start .logo {
+    margin: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.nav {
+    width: 70%;
+}
+
+ .nav ul{
+    list-style: none;
+    display: flex;
+    /* background-color: yellow; */
+}
+
+ .nav ul li{
+    padding: 10px;
+    margin: 1px;
+    background-color: yellow;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav ul li:hover{
+    background-color: magenta;
+}

@@ -1,0 +1,60 @@
+<div class="grid-container">
+  <div class="title-container">
+    <h1 class="mat-h1">Movie Name</h1>
+    <div>
+      <button mat-fab  aria-label="Example icon button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button class="btn-watch-later" mat-raised-button color="primary">Watch Later</button>
+    </div>
+  </div>
+  <mat-grid-list cols="2" rowHeight="200px">
+    <mat-grid-tile  [colspan]="2" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <img src="https://source.unsplash.com/XvpSmfSFAII" height="100%" width="100%" />
+       
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile  [colspan]="2" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Movie Description
+            
+          </mat-card-title>
+        </mat-card-header>
+        
+       
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <!-- <mat-card-header>
+          <mat-card-title>
+            Movie Description
+            
+          </mat-card-title>
+        </mat-card-header> -->
+        
+        d. IMDB rating
+        e. Language
+        f. Genre
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile  [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <!-- <mat-card-header>
+          <mat-card-title>
+            Movie Description
+            
+          </mat-card-title>
+        </mat-card-header> -->
+        d. IMDB rating
+e. Language
+f. Genre
+       
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
