@@ -2,12 +2,12 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [opened]="(isHandset$ | async) === false" *ngIf="isAuth" >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home">Home</a>
+      <a mat-list-item routerLink="/">Home</a>
       <a mat-list-item routerLink="favourite">Favourite</a>
-      <a mat-list-item routerLink="/watchlater">Watch Later</a>
+      <a mat-list-item routerLink="/watch-later">Watch Later</a>
       <a mat-list-item routerLink="/watched">Watched</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -17,11 +17,28 @@
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset$ | async"
+        
+        >
+        <!-- (click)="drawer.toggle()" -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ott-ui</span>
+      <span><a routerLink="">Binge-Watch</a></span>
+      <!-- <span></span> -->
+      <div class="btn-add">
+        <button *ngIf="showAdd()"  mat-button (click)="gotoAddMovie()">Add Movie</button>
+      </div>
+      <div class="btn-prime">
+        <button *ngIf="isPrime()"  mat-button>Prime</button>
+      </div>
+      <div class="btn-prime">
+        <button *ngIf="!isPrime()" (click)="joinPrime()"  mat-button>Join Prime</button>
+      </div>
+      <div class="btn-login">
+      <button  *ngIf="!isAuth" mat-button (click)="logoutUser()">Login</button>
+      <button  *ngIf="isAuth" mat-button>Welcome! {{userName}}</button>
+      <button  *ngIf="isAuth" mat-button (click)="logoutUser()">Logout</button>
+    </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

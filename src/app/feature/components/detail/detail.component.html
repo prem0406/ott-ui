@@ -1,6 +1,6 @@
 <div class="grid-container">
   <div class="title-container">
-    <h1 class="mat-h1">Movie Name</h1>
+    <h1 class="mat-h1">{{movie?.name}}</h1>
     <div>
       <button mat-fab  aria-label="Example icon button with a heart icon">
         <mat-icon>favorite</mat-icon>
@@ -20,8 +20,7 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            Movie Description
-            
+            <p class="movie-desc">{{movie.desc}}</p>
           </mat-card-title>
         </mat-card-header>
         
@@ -37,22 +36,14 @@
           </mat-card-title>
         </mat-card-header> -->
         
-        d. IMDB rating
-        e. Language
-        f. Genre
+        <p class="movie-rating">IMDB rating: {{movie.rating}}</p> 
+        
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile  [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card">
-        <!-- <mat-card-header>
-          <mat-card-title>
-            Movie Description
-            
-          </mat-card-title>
-        </mat-card-header> -->
-        d. IMDB rating
-e. Language
-f. Genre
+        <p class="movie-rating">Language: {{movie.language}}</p> 
+        <p class="movie-rating">Genre: {{movie.genre}}</p> 
        
       </mat-card>
     </mat-grid-tile>

@@ -8,6 +8,7 @@
   left: 15px;
   right: 15px;
   bottom: 15px;
+ 
 }
 
 .more-button {
@@ -28,4 +29,14 @@
 
 .btn-watch-later {
   margin: 0 14px
+}
+
+.movie-desc {
+  font-weight: normal;
+}
+
+.movie-rating {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 50px;
 }

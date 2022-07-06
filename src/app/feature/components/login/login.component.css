@@ -1,0 +1,45 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.bottom button {
+  margin: 10px;
+}
+
+input.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.form-group input {
+  height: 35px;
+  width: 30%;
+  margin: 20px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.form-group label {
+  font-size: 20px;
+}
+
+.invalid-feedback {
+  width: 88%;
+}

@@ -15,3 +15,26 @@
   top: 0;
   z-index: 1;
 }
+
+.btn-login {
+  position: fixed;
+  right: 23px;
+}
+
+span a {
+
+    color: #fff;
+    text-decoration: none;
+}
+
+span a:hover {
+    color:#fefefe; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.btn-add {
+  position: fixed;
+  right: 50%;
+}
+

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
+import { HttpService } from 'src/app/shared/http.service';
+import { Movie } from 'src/app/models/movie.interface';
 
 @Component({
   selector: 'app-detail',
@@ -8,26 +9,21 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Name', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
+  constructor(private route: ActivatedRoute, private movieService: HttpService) {}
+
+  movieId: number;
+  movie: Movie;
+
+  ngOnInit(): void {
+    this.movieId = this.route.snapshot.params['id'];
+
+
+    this.movieService.getMovie(this.movieId).subscribe((res: Movie | any)=>{
+      this.movie = res;
+      this.movieService.postWatched(this.movie).subscribe();
     })
-  );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+    
+  }
 }

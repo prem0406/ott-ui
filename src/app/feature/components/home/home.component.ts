@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { HttpService } from 'src/app/shared/http.service';
+import { Movie } from 'src/app/models/movie.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -29,5 +32,53 @@ export class HomeComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private movieService: HttpService, private router: Router) {}
+
+  movies: Movie[];
+
+  ngOnInit(): void {
+    this.movieService.getMovieList().
+    subscribe((res: Movie[] | any) => {
+      this.movies = res;
+    }, error => this.handleErrorResponse(error)
+    );
+
+    // window.location.reload();
+  }
+
+  handleErrorResponse(error:any) {
+    console.log('Error getting movies ', error);
+  }
+
+  clickHandler = (id: number)=>{
+  
+    this.router.navigate(['movie', id]);
+  }
+
+  addWatchLater(data: Movie){
+    if(this.movieService.isAuth()){
+
+    
+      this.movieService.postWatchedLater(data).subscribe(res => {
+        alert("Success!")
+      }, error=> alert("Something went wrong!"))
+  
+    } else {
+      this.router.navigate(["login"])
+    }
+  }
+
+  addFav(data: Movie){
+    if(this.movieService.isAuth()){
+
+    
+    this.movieService.postFav(data).subscribe(res => {
+      alert("Success!")
+    }, error=> alert("Something went wrong!"))
+
+  } else {
+    this.router.navigate(["login"])
+  }
+
+  }
 }

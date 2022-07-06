@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     CoreModule,
     FeatureModule,
+    AdminModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -33,7 +36,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

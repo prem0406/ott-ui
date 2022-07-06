@@ -1,0 +1,143 @@
+{
+  "movieList": [
+    {
+      "id": "1",
+      "name": "Stranger Things",
+      "title": "Stranger Things",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "5",
+      "genre": "Drama"
+    },
+    {
+      "id": "2",
+      "name": "The Lost City",
+      "title": "The Lost City",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "4.5",
+      "genre": "Drama"
+    },
+    {
+      "id": "3",
+      "name": "Fantastice Four",
+      "title": "Fantastice Four",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "2.5",
+      "genre": "Drama"
+    },
+    {
+      "id": "4",
+      "name": "Morbius",
+      "title": "Morbius",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "4.5",
+      "genre": "Drama"
+    },
+    {
+      "id": "5",
+      "name": "Eternals",
+      "title": "Eternals",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "4.1",
+      "genre": "Drama"
+    },
+    {
+      "id": "6",
+      "name": "Dark",
+      "title": "Dark",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "genre": "Drama"
+    },
+    {
+      "id": "7",
+      "name": "Inception",
+      "title": "Inception",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "5",
+      "genre": "Drama"
+    },
+    {
+      "id": "8",
+      "name": "Intersteller",
+      "title": "Intersteller",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "3.5",
+      "genre": "Drama"
+    },
+    {
+      "id": 64,
+      "name": "dfasdfs",
+      "title": "dsfasdf",
+      "rating": "6",
+      "desc": "fasdf",
+      "language": "dsfsdf",
+      "genre": null
+    },
+    {
+      "id": 648,
+      "name": "Bramastra",
+      "title": "Bramastra",
+      "rating": "3",
+      "desc": "asffasd",
+      "language": "Hin",
+      "genre": "Thriller"
+    }
+  ],
+  "fav": [
+    {
+      "id": 648,
+      "name": "Bramastra",
+      "title": "Bramastra",
+      "rating": "3",
+      "desc": "asffasd",
+      "language": "Hin",
+      "genre": "Thriller"
+    }
+  ],
+  "watchLater": [
+    {
+      "id": 648,
+      "name": "Bramastra",
+      "title": "Bramastra",
+      "rating": "3",
+      "desc": "asffasd",
+      "language": "Hin",
+      "genre": "Thriller"
+    },
+    {
+      "id": "1",
+      "name": "Stranger Things",
+      "title": "Stranger Things",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "rating": "5",
+      "genre": "Drama"
+    }
+  ],
+  "watched": [
+    {
+      "id": 648,
+      "name": "Bramastra",
+      "title": "Bramastra",
+      "rating": "3",
+      "desc": "asffasd",
+      "language": "Hin",
+      "genre": "Thriller"
+    },
+    {
+      "id": "6",
+      "name": "Dark",
+      "title": "Dark",
+      "desc": "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysterie",
+      "language": "English",
+      "genre": "Drama"
+    }
+  ]
+}
